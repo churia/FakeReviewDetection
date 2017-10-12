@@ -1,0 +1,32 @@
+Fake Review Detection
+
+Data source: http://liu.cs.uic.edu/download/data/
+Data Location: Dumbo HDFS
+/user/yz3768/amazon
+
+Code:
+general_analysis.scala:
+-analyze the relations inter/intra reviewers, products and reviews.
+-generate corresponding statistic files at amazon/*_hist
+
+duplicate_detection.scala:
+-detect duplicate reviews, save at amazon/duplicate  
+
+classify.scala: 
+-binary classification: all fake reviews vs. subsample of non-fake reviews
+-extract features based on the above observation on fake reviews
+-train a classifier for fake review according to the above analytics
+-show validation accuracy at last
+
+Execusion:
+(sorry, no application/package/jar generated. Use spark-shell only)
+
+Please run the analytics using the following command:
+
+spark-shell -i general_analysis.scala
+spark-shell -i duplicate_detection.scala
+spark-shell -i classify.scala
+
+Or run them at one:
+
+spark-shell -i general_analysis.scala duplicate_detection.scala classify.scala
