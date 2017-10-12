@@ -18,9 +18,6 @@ classify.scala:
 -train a classifier for fake review according to the above analytics
 -show validation accuracy at last
 
-Execusion:
-(sorry, no application/package/jar generated. Use spark-shell only)
-
 Please run the analytics using the following command:
 
 spark-shell -i general_analysis.scala
